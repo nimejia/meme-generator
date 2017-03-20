@@ -2,7 +2,7 @@ class InvalidDiacriticCharacterException extends Error {
     constructor(offendingChar: string, validCharSetString: string[]) {
         var validChars = validCharSetString.join(', ');
 
-        super(`ERROR: Value ${offendingChar} not found in diacritical character set: ${validChars}`);
+        super(`ERROR: Value ${offendingChar} is not a valid diacritic. Valod diacritics are: ${validChars}`);
 
         Object['setPrototypeOf'](this, InvalidDiacriticCharacterException.prototype);
     }
